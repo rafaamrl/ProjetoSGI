@@ -89,8 +89,23 @@ iframe{
   text-transform: uppercase;
   font-weight: 600;
   position: absolute;
-  padding-top: 100px;
-  z-index: 5;
+  padding-top: 420px;
+  z-index: 1;
+}
+
+.btnVideo {
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: white;
+  border: 0;
+  border-radius: 8px;
+  height: 40px;
+  color: black;
+  padding-right: 15px;
+  transition-duration: 0.2s;
 }
 
 
@@ -114,4 +129,256 @@ iframe{
   
  padding: 5px;
  background-color: white;
+}
+
+.header1 {
+  position: absolute;
+  background-color: #025353;
+  top: 0;
+  padding-bottom: 15px;
+}
+
+.rw-words{
+	display: inline;
+  margin-right: 130px;
+}
+
+.rw-words-1 span{
+	position: absolute;
+  top: 2px;
+	opacity: 0;
+	overflow: hidden;
+	color: white;
+	-webkit-animation: rotateWord 18s linear infinite 0s;
+	-ms-animation: rotateWord 18s linear infinite 0s;
+	animation: rotateWord 18s linear infinite 0s;
+}
+.rw-words-1 span:nth-child(2) { 
+  -webkit-animation-delay: 3s; 
+	-ms-animation-delay: 3s; 
+	animation-delay: 3s; 
+	color: white;
+}
+
+@-webkit-keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -webkit-transform: translateY(30px); }
+  5% { opacity: 1; -webkit-transform: translateY(0px);}
+  17% { opacity: 1; -webkit-transform: translateY(0px); }
+  20% { opacity: 0; -webkit-transform: translateY(30px); }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -ms-transform: translateY(30px); }
+  5% { opacity: 1; -ms-transform: translateY(0px);}
+  17% { opacity: 1; -ms-transform: translateY(0px); }
+  20% { opacity: 0; -ms-transform: translateY(-30px); }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+  5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+  20% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.header2 {
+  position: absolute;
+  top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #008080;
+}
+
+.headerLogo {
+  margin-left: 20px;
+}
+
+.search-bar {
+  text-align: left;
+  text-indent: 10px;
+  font-size: large;
+  margin-left: 30px;
+  background-color: #085255;
+  border: 0;
+  border-radius: 50px;
+  width: 95%;
+  height: 45px;
+  color: white;
+}
+
+.search-bar:hover {
+  background-color: #074a4d;
+}
+
+.btnLogin {
+  text-align: left;
+  text-indent: 8px;
+  font-size: large;
+  background-color: #008080;
+  border: 0;
+  border-radius: 50px;
+  width: 50%;
+  height: 45px;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.btnLogin:hover {
+  background-color: #085255;
+}
+
+.btnFavCart {
+  text-align: center;
+  font-size: large;
+  background-color: #008080;
+  border: 0;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  color: white;
+  margin-left: 20px;
+  transition-duration: 0.4s;
+}
+
+.btnFavCart:hover {
+  background-color: #085255;
+}
+
+.btnMenu {
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: white;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: black;
+  padding-right: 15px;
+  transition-duration: 0.2s;
+}
+
+.btnMenu:hover {
+  background-image: linear-gradient(#ff3f51, #ff6522);
+  color: white;
+}
+
+.btnCategories {
+  text-align: left;
+  font-weight: bold;
+  font-size: medium;
+  background-color: #008080;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+
+.btnCategories:hover {
+  background-color: #085255;
+}
+
+.btnBusiness {
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: #1A8D8D;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: white;
+  padding-right: 15px;
+}
+
+.btnBusiness:hover {
+  background-image: linear-gradient(#ff3f51, #ff6522);
+}
+
+.novosDescontos {
+  position: relative;
+  width: 100%;
+  margin-top: 175px;
+}
+
+#navbarTop {
+  position: fixed;
+  overflow: hidden;
+  top: -50;
+  transition-duration: 0.1s;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  background-color: white;
+}
+
+.topLogo {
+  margin-left: 30px;
+  padding: 15px;
+}
+
+.btnMenu.top{
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: black;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: white;
+  padding-right: 15px;
+  transition-duration: 0.2s;
+}
+
+.search-bar.top {
+  text-align: left;
+  text-indent: 10px;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: #F6F7F9;
+  border: 0;
+  border-radius: 50px;
+  width: 72%;
+  height: 45px;
+  color: black;
+  transition-duration: 0.3s;
+}
+
+.search-bar.top:hover {
+  background-color: #e4e7ec;
+}
+
+.btnLoginFavCart {
+  text-align: center;
+  font-size: large;
+  background-color: #F6F7F9;
+  border: 0;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  color: black;
+  margin-left: 10px;
+  transition-duration: 0.4s;
+}
+
+.btnLoginFavCart:hover {
+  background-color: #e4e7ec;
 }
