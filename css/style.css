@@ -34,8 +34,15 @@ body {
 }
 
 #imagemProdutos{
-  width:137px;
-  height: 137px;
+  width:175px;
+  height: 175px;
+  margin: auto;
+  display: block;
+}
+
+#imagemProdutos2{
+  width:190px;
+  height: 190px;
   margin: auto;
   display: block;
 }
@@ -86,6 +93,7 @@ iframe{
   z-index: 5;
 }
 
+
 #imgFooter {
   border: 2px solid black;   
   height:135px;
@@ -107,5 +115,3 @@ iframe{
  padding: 5px;
  background-color: white;
 }
-
-
