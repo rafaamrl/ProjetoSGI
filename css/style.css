@@ -111,6 +111,7 @@ iframe{
 
 #imgFooter {
   height:135px;
+  width: 100%;
 }
 
 #containerFooter {
@@ -383,4 +384,49 @@ iframe{
 
 .btnLoginFavCart:hover {
   background-color: #e4e7ec;
+}
+
+.content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50%;
+}
+
+.content.img1 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-10-25-60-01dec/images/hpa1_bckg1.jpg');
+  background-position: center top;
+}
+
+.content.img2 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-15-25-60-13dec/images/hpa2_bckg.png');
+  background-size: contain;
+  background-position: center bottom;
+  background-color: #d4ab93;
+}
+
+.content.img3 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-15-25-60-13dec/images/hpa3_bckg.jpg');
+  background-position: center bottom;
+}
+
+.content.img4 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Cyber-monday-60-15-25-60/images/hpa4_bckg_v2.jpg');
+  background-position: center;
+}
+
+.content.img5 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-15-25-60-13dec/images/hpa5_bckg.jpg');
+  background-position: center;
+}
+
+.content.img6 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-10-25-60-06dec/images/hpa6_bckg.jpg');
+  background-position: center top;
+}
+
+.content.img7 {
+  background-image: url('https://cdn.laredoute.com/marketing/Studio/PT/AH22/PT_Xmas-60-15-25-60-13dec/images/hpa7_bckg.gif');
+  background-size: contain;
+  background-position: center bottom;
+  background-color: #f3bcb7;
 }
