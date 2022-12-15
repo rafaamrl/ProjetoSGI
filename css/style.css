@@ -139,6 +139,13 @@ iframe{
   padding-bottom: 15px;
 }
 
+.header1.other {
+  position: absolute;
+  background-color: #F6F7F9;
+  top: 0;
+  padding-bottom: 15px;
+}
+
 .rw-words{
 	display: inline;
   margin-right: 130px;
@@ -154,11 +161,23 @@ iframe{
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
 }
-.rw-words-1 span:nth-child(2) { 
+
+.rw-words-1.other span{
+	position: absolute;
+  top: 2px;
+	opacity: 0;
+	overflow: hidden;
+	color: black;
+	-webkit-animation: rotateWord 18s linear infinite 0s;
+	-ms-animation: rotateWord 18s linear infinite 0s;
+	animation: rotateWord 18s linear infinite 0s;
+}
+
+.rw-words-1.other span:nth-child(2) { 
   -webkit-animation-delay: 3s; 
 	-ms-animation-delay: 3s; 
 	animation-delay: 3s; 
-	color: white;
+	color: black;
 }
 
 @-webkit-keyframes rotateWord {
@@ -197,6 +216,15 @@ iframe{
   background-color: #008080;
 }
 
+.header2.other {
+  position: absolute;
+  top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 0,0 -1px #cccccc inset, 0 0, 0 0;
+}
+
 .headerLogo { 
   margin-left: 20px;
 }
@@ -218,6 +246,23 @@ iframe{
   background-color: #074a4d;
 }
 
+.search-bar.other {
+  text-align: left;
+  text-indent: 10px;
+  font-size: large;
+  margin-left: 30px;
+  background-color: #F6F7F9;
+  border: 0;
+  border-radius: 50px;
+  width: 95%;
+  height: 45px;
+  color: black;
+}
+
+.search-bar.other:hover {
+  background-color: #e4e7ec;
+}
+
 .btnLogin {
   text-align: left;
   text-indent: 8px;
@@ -233,6 +278,23 @@ iframe{
 
 .btnLogin:hover {
   background-color: #085255;
+}
+
+.btnLogin.other {
+  text-align: left;
+  text-indent: 8px;
+  font-size: large;
+  background-color: white;
+  border: 0;
+  border-radius: 50px;
+  width: 50%;
+  height: 45px;
+  color: black;
+  transition-duration: 0.4s;
+}
+
+.btnLogin.other:hover {
+  background-color: #F6F7F9;
 }
 
 .btnFavCart {
@@ -252,6 +314,23 @@ iframe{
   background-color: #085255;
 }
 
+.btnFavCart.other {
+  text-align: center;
+  font-size: large;
+  background-color: white;
+  border: 0;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  color: black;
+  margin-left: 20px;
+  transition-duration: 0.4s;
+}
+
+.btnFavCart.other:hover {
+  background-color: #F6F7F9;
+}
+
 .btnMenu {
   text-align: left;
   text-indent: 5px;
@@ -263,6 +342,21 @@ iframe{
   border-radius: 50px;
   height: 40px;
   color: black;
+  padding-right: 15px;
+  transition-duration: 0.2s;
+}
+
+.btnMenu.other {
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: black;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: white;
   padding-right: 15px;
   transition-duration: 0.2s;
 }
@@ -290,6 +384,24 @@ iframe{
   background-color: #085255;
 }
 
+.btnCategories {
+  text-align: left;
+  font-weight: bold;
+  font-size: medium;
+  background-color: white;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+
+.btnCategories:hover {
+  background-color: #F6F7F9;
+}
+
 .btnBusiness {
   text-align: left;
   text-indent: 5px;
@@ -304,8 +416,23 @@ iframe{
   padding-right: 15px;
 }
 
+.btnBusiness.other {
+  text-align: left;
+  text-indent: 5px;
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 30px;
+  background-color: #F6F7F9;
+  border: 0;
+  border-radius: 50px;
+  height: 40px;
+  color: black;
+  padding-right: 15px;
+}
+
 .btnBusiness:hover {
   background-image: linear-gradient(#ff3f51, #ff6522);
+  color: white;
 }
 
 .novosDescontos {
@@ -328,6 +455,7 @@ iframe{
   z-index: 5;
   width: 100%;
   background-color: white;
+  box-shadow: 0 0,0 -1px #cccccc inset, 0 0, 0 0;
 }
 
 .topLogo {
