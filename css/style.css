@@ -162,6 +162,13 @@ iframe{
 	animation: rotateWord 18s linear infinite 0s;
 }
 
+.rw-words-1 span:nth-child(2) { 
+  -webkit-animation-delay: 3s; 
+	-ms-animation-delay: 3s; 
+	animation-delay: 3s; 
+	color: white;
+}
+
 .rw-words-1.other span{
 	position: absolute;
   top: 2px;
