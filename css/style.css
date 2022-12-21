@@ -234,6 +234,7 @@ iframe{
 
 .headerLogo { 
   margin-left: 20px;
+  padding-right: 20px;
 }
 
 .search-bar {
@@ -584,4 +585,12 @@ iframe{
  right:0.5%;
  padding: 5px;
  background-color: white;
+}
+
+.inspi-title {
+  font-size: 70px;
+  margin-bottom: 2px;
+  background: -webkit-linear-gradient(#9e52fd, #db77ae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
