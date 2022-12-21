@@ -2,7 +2,7 @@ var cena = new THREE.Scene();
 var camera =  new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000)
 var meuCanvas = document.getElementById('meuCanvas')
 var renderer = new THREE.WebGLRenderer( { canvas: meuCanvas })
-renderer.setSize( window.innerWidth, window.innerHeight )
+renderer.setSize( meuCanvas.offsetWidth, meuCanvas.offsetHeight )
 
 cena.background = new THREE.Color(0xffffff);
 
