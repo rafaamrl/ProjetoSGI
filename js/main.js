@@ -1,8 +1,10 @@
 var cena = new THREE.Scene();
-var camera =  new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000)
-var meuCanvas = document.getElementById('meuCanvas')
-var renderer = new THREE.WebGLRenderer( { canvas: meuCanvas })
-renderer.setSize( meuCanvas.offsetWidth, meuCanvas.offsetHeight )
+var camera =  new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000);
+var meuCanvas = document.getElementById('meuCanvas');
+var renderer = new THREE.WebGLRenderer( { canvas: meuCanvas });
+renderer.setSize( meuCanvas.offsetWidth, meuCanvas.offsetHeight );
+const clock = new THREE.Clock();
+const mixer = new THREE.AnimationMixer(cena);
 
 cena.background = new THREE.Color(0xffffff);
 
@@ -14,11 +16,14 @@ renderer.shadowMap.enabled = true
 camera.position.set(0,2,15)
 camera.lookAt(0,0,0)
 
-var controlos = new THREE.OrbitControls( camera, renderer.domElement )
+var controlos = new THREE.OrbitControls( camera, renderer.domElement );
+
+let actionOpen;
+let actionClose
 
 var carregador = new THREE.GLTFLoader()
 carregador.load(
-    'models/TV.gltf',
+    'models/TV2.gltf',
  function ( gltf ) {     
     cena.add( gltf.scene )
     cena.traverse(function(x) {
@@ -31,6 +36,16 @@ carregador.load(
             movel = x
         }
     })
+
+    const clipOpen = THREE.AnimationClip.findByName(gltf.animations, 'MovelOpen');
+    const clipClose = THREE.AnimationClip.findByName(gltf.animations, 'MovelClose');
+
+    actionOpen = mixer.clipAction(clipOpen);
+    actionClose = mixer.clipAction(clipClose);
+
+    actionOpen.timeScale = -actionOpen.timeScale;
+    actionClose.timeScale = -actionClose.timeScale;
+
     corOriginal=movel.material.color;
  } 
 )
@@ -48,6 +63,7 @@ let isLightOn = true;
 let isCorDifferent = true;
 let isContrastOn = false;
 let isTransparencyOn = true;
+let isClosed = true;
 const luzFrontal = new THREE.PointLight(0xffffff, 1);
 const luzTraseira = new THREE.PointLight(0xffffff, 1);
 const luzDireita = new THREE.PointLight(0xffffff, 1);
@@ -109,6 +125,9 @@ document.getElementById('btn_contraste').onclick = () => {
 btn_material.onchange = () => {
     if (btn_material.value === 'vime') {
         portas.material.map = new THREE.TextureLoader().load('/models/textures/Wicker001_1K_Color.png');
+        portas.material.map.wrapS = THREE.RepeatWrapping;
+        portas.material.map.wrapT = THREE.RepeatWrapping;
+        portas.material.map.repeat.set( 4, 4 );
       return;
     }
     portas.material.map = new THREE.TextureLoader().load('/models/textures/Wood028_2K_Color.png');
@@ -136,6 +155,7 @@ btn_visualizacao.onchange= () => {
     camera.lookAt(0,0,0)
 
 };
+
 //Alterar transparecia
 btn_transparencia.addEventListener('click',function(){
     isTransparencyOn = !isTransparencyOn
@@ -147,6 +167,26 @@ btn_transparencia.addEventListener('click',function(){
     movel.material.opacity = 0.0
     movel.material.transparent = true;
 });
+
+//Corre as animações de abrir e fechar o móvel
+function toggleAnimation() {
+    if(isClosed) {
+        actionOpen.timeScale = -actionOpen.timeScale;
+        actionOpen.paused = false;
+        actionOpen.play();
+        actionOpen.setLoop(THREE.LoopOnce);
+        actionOpen.clampWhenFinished = true;
+    } else {
+        actionClose.timeScale = -actionClose.timeScale;
+        actionClose.paused = false;
+        actionClose.play();
+        actionClose.setLoop(THREE.LoopOnce);
+        actionClose.clampWhenFinished = true;
+    }
+  }
+  
+  document.getElementById('btnAnimacao').onclick = () => toggleAnimation();
+  
 
 
 //Repor Cena
@@ -168,6 +208,9 @@ btn_repor.addEventListener('click',function(){
     //repor material
     btn_material.value = 'vime';
     portas.material.map = new THREE.TextureLoader().load('/models/textures/Wicker001_1K_Color.png');
+    portas.material.map.wrapS = THREE.RepeatWrapping;
+    portas.material.map.wrapT = THREE.RepeatWrapping;
+    portas.material.map.repeat.set( 4, 4 );
 
     //repor transparência
     movel.material.opacity = 1
@@ -182,8 +225,10 @@ btn_repor.addEventListener('click',function(){
 
 function animar() {
     requestAnimationFrame( animar )
+    mixer.update(clock.getDelta());
     renderer.render( cena, camera )
 }
+
 animar()
 addLights()
 

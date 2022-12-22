@@ -601,7 +601,8 @@ iframe{
 }
 
 .buttons3D{
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   width: 100%;
   height: 40px;
   background-color: #F6F7F9;
